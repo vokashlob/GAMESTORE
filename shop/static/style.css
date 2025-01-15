@@ -1,0 +1,18 @@
+body {color: dimgray; font-family: "Segoe UI", Arial, sans-serif;}
+
+a:link { color: gray; }
+a:visited { color: green; }
+a:hover { color: purple; }
+a:active { color: teal; }
+a.button {
+    padding: 1px 6px;
+    border: 1px outset buttonborder;
+    border-radius: 3px;
+    color: white;
+    background-color: green;
+    text-decoration: none;
+}
+.menu {text-transform: uppercase; font-kerning: none; letter-spacing: 2px;}
+.field {clear:both; text-align:right; line-height:25px;}
+label {float:left; padding-right:10px;}
+.form {float:left}

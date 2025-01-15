@@ -1,0 +1,15 @@
+{% extends './menu.html' %}
+{% block header %}
+{{ block.super }}
+{% endblock %}
+{% block menu %}
+{{ block.super }}
+<span class="menu"><a href="#">Пункт меню только для Корзины</a> ||</span>
+{% endblock %}
+{% block content %}
+<h3>В корзине ничего нет</h3>
+<span><a class="button" href="{{ back_url }}">Вернуться обратно</a></span>
+{% endblock %}
+{% block footer %}
+{{ block.super }}
+{% endblock %}

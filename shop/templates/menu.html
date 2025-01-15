@@ -1,0 +1,26 @@
+{% load static %}
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+<h1>{{ title }}</h1>
+{% endblock %}
+{% block menu %}
+<span class="menu">|| <a href="/platform">Главная</a> ||</span>
+<span class="menu"><a href="/platform/games">Игры</a> ||</span>
+<span class="menu"><a href="/platform/cart">Корзина</a> ||</span>
+<span class="menu"><a href="/platform/HTML_sign_up">HTML-регистрация</a> ||</span>
+<span class="menu"><a href="/platform/django_sign_up">DJANGO-регистрация</a> ||</span>
+{% endblock %}
+{% block content %}
+<p>&nbsp;</p>
+{% endblock %}
+{% block footer %}
+</body>
+</html>
+{% endblock %}
