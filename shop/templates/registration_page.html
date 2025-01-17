@@ -10,6 +10,17 @@
 {% if error %}
 <p><strong>{{ error }}</strong></p>
 {% endif %}
+{% if form %}
+<form method="post">
+    {% csrf_token %}
+    <div class="form">
+{{ form }}
+<div class="field">
+        <button type="submit">Отправить</button>
+    </div>
+        </div>
+</form>
+{% else %}
 <form method="post">
     {% csrf_token %}
     <div class="form">
@@ -30,5 +41,6 @@
     </div>
         </div>
 </form>
+{% endif %}
 </body>
 </html>

@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Buyer(models.Model):
     name = models.CharField(max_length=30, unique=True)
     balance = models.DecimalField(max_digits=9, decimal_places=2, default=0)
@@ -8,6 +9,10 @@ class Buyer(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Покупатель'
+        verbose_name_plural = 'Покупатели'
 
 
 class Game(models.Model):
@@ -20,3 +25,7 @@ class Game(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        verbose_name = 'Игра'
+        verbose_name_plural = 'Игры'
