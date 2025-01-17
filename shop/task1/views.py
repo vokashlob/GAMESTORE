@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import (RegisterForm)
-from .models import Buyer, Game
+from .models import Buyer, Game, News
+from django.core.paginator import Paginator
 # from django.views.generic import TemplateView
 
 
@@ -90,3 +91,18 @@ def sign_up_by_django(request):
     else:
         info['form'] = RegisterForm()
     return render(request, 'registration_page.html', context=info)
+
+
+def news(request):
+    title = 'Навигатор игрового мира'
+    news = News.objects.all().order_by('-date')
+    paginator = Paginator(news, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    back_url = '/platform'
+    context = {
+        'title': title,
+        'back_url': back_url,
+        'news': page_obj
+    }
+    return render(request, 'news.html', context=context)
